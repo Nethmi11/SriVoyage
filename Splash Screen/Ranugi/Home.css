@@ -1,16 +1,16 @@
 /* Navigation bar */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
 
-nav {
+*{
+    font-family: 'Poppins',sans-serif;
+}
+    nav {
     background-color: #272343;
-    padding: 40px;
+    padding: 17px;
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
     padding-left: 50px;
-    z-index: 1000;
-    font-family: 'Poppins', sans-serif;
 }
 
 nav ul {
@@ -22,9 +22,6 @@ nav ul {
     justify-content: center;
 }
 
-nav li {
-    float: center;
-}
 
 nav li a {
     display: block;
@@ -32,27 +29,28 @@ nav li a {
     text-align: center;
     padding: 14px 20px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 22px;
 }
 
 nav li a:hover {
     background-color: #433d69 ;
 }
 
+nav li a:active {
+    text-decoration: underline ;
+}
+
+
 .logo {
     position: fixed;
-    left: 50;
     top: 0;
     bottom: 0;
-    width: 160px; 
-    height: 120px;
+    width: 120px; 
+    height: 75px;
     margin-top: 7px;
 }
+/* navigation bar end */
 
-.active {
-    text-decoration: underline;
-
-}
 
   
 /* Main page */

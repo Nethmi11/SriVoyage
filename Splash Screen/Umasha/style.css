@@ -1,18 +1,33 @@
-/* Navigation bar */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
-*{
+
+* {
     font-family: 'Poppins', sans-serif;
 }
 
-nav {
-    background-color: #272343;
-    padding: 40px;
-    position: fixed;
+/* Background image */
+.bg-image {
+    background-image: url("../homepage_img.jpg");
+    filter: blur(50px) brightness(50%);  /* Add the blur effect */
+    -webkit-filter: blur(8px);
+    height: 100vh;  /* Full height */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;  /* Stays fixed behind the content */
     top: 0;
     left: 0;
     width: 100%;
+    z-index: -1;  /* Places it behind other content */
+}
+
+/* Navigation bar */
+nav {
+    background-color: #272343;
+    padding: 17px;
+    position: fixed;
+    top: 0;
+    width: 100%;
     padding-left: 50px;
-    z-index: 1000;
 }
 
 nav ul {
@@ -24,36 +39,103 @@ nav ul {
     justify-content: center;
 }
 
-nav li {
-    float: center;
-}
-
 nav li a {
     display: block;
     color: white;
     text-align: center;
     padding: 14px 20px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 22px;
 }
 
 nav li a:hover {
-    background-color: #433d69 ;
+    background-color: #433d69;
+}
+
+nav li a:active {
+    text-decoration: underline;
 }
 
 .logo {
     position: fixed;
-    left: 50;
     top: 0;
     bottom: 0;
-    width: 160px; 
-    height: 120px;
+    width: 120px;
+    height: 75px;
     margin-top: 7px;
 }
 
-.active {
-    text-decoration: underline;
+/* Main page container */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 150px;
+    margin-bottom: 30px;
+}
 
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.column {
+    margin: 10px;
+}
+
+/* Images that appear as clickable popups */
+.column img {
+    width: 520px;
+    height: 220px;
+    margin: 5px 0px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+}
+
+/* Modal styling for popup images */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.close {
+    position: absolute;
+    top: 50px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-content, .close {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
 }
 
 /* Footer */
@@ -70,7 +152,7 @@ footer {
 }
 
 #editor:active {
-    text-decoration:solid;
+    text-decoration: solid;
 }
   
 /* Main page */
@@ -80,14 +162,12 @@ footer {
     justify-content: center;
     margin-top: 150px;
     margin-bottom: 30px;
-    
 }
   
 .row {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    
 }
   
 .column {
@@ -95,24 +175,33 @@ footer {
 }
   
 .column img {
-    margin: 20px 20px ;
-    float: left; 
-    width: 520px;
-    height: 320px;
+    margin: 8px 20px 20px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow for better visual effect */
+    float: left;
+    width: 420px;
+    height: 220px;
+    border:2px solid white;
+    border-radius: 10px 20px; /* Circle/Oval effect */
+    transition: transform 0.2s ease; /* Add hover effect */
+}
+
+.column img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
 }
 
 .column p {
     font-size: 16px;
     text-align: center;
     font-weight: 550;
-    font-size: large;
+    color: white;
 }
 
 /* Comments form */
 .heading-comments{
     margin-top: 150px;
     text-align: center;
-    color: #272343;
+    color: #f1f1f1;
+    text-shadow: 2px 2px #1c235d;
 }
 
 .comform{
@@ -144,9 +233,12 @@ footer {
 }
 
 .question{
-    padding-top: 5px;
+    padding-top: 6px;
     margin-bottom: 15px;
-    background-color:#e3f6f5 ;
+    border:2px solid white;
+    border-radius: 5px;
+    background-color: rgba(227, 246, 245, 0.7);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     width: 800px;
     margin: 30px auto;
 }
@@ -295,6 +387,9 @@ footer {
     font-style: italic;
 }
 
+.figcaption{
+    font-size: medium;
+}
 
 
   

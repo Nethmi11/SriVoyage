@@ -55,6 +55,24 @@ nav li a:hover {
     text-decoration: underline;
 }
 
+.bg-image {
+    height: 100%;
+    /* The image used */
+    background-image: url("../homepage_img.jpg");
+  
+    /* Add the blur effect */
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+  
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
 /* Footer */
 footer {
     background-color: #272343;

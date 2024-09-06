@@ -7,12 +7,45 @@
     box-sizing: border-box;
 }
 
+/* body {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('path_to_your_image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(5px);
+} */
 
-body {
+
+
+/* body {
     background-color:#a8e6cf;
-}
+} */
 
 /* nav bar start*/
+
+
+/* Background container with blur */
+.bg-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../homepage_img.jpg'); /* Your image path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    filter: blur(50px) brightness(50%);
+    -webkit-filter: blur(8px);
+    z-index: -1;
+}
+
+
+/* Content should appear on top of the background */
+.content {
+    position: relative;
+    z-index: 1; /* Ensures content stays above the background */
+}
 nav {
     background-color: #272343;
     padding: 15px;
@@ -78,7 +111,8 @@ nav li a:active {
 .container {
     max-width: 1068px;
     margin: auto;
-    width: 100%;   
+    width: 100%; 
+    z-index: 1000; 
 }
 
 /* .shop {
@@ -88,10 +122,14 @@ nav li a:active {
 
 .page-title {
     font-weight: 600;
-    text-align: center;
     margin-bottom: 28.8px;
     font-size: 32px;
     margin-top: 170px;
+
+    /* margin-top: 150px; */
+    text-align: center;
+    color: #f1f1f1;
+    text-shadow: 2px 2px #1c235d;
    
 } 
 

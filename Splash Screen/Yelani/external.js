@@ -4,25 +4,25 @@ const fontSizes = document.querySelectorAll('.font-sizes button');
 
 
 
-colors.forEach(color => {
-  color.addEventListener('click', () => {
-    if (color.id === 'random') {
-      body.style.backgroundColor = getRandomColor();
-    } else {
-      body.style.backgroundColor = getComputedStyle(color).backgroundColor;
-      
-    }
-  });
 
-});
-
-function getRandomColor() {
-  const letters = '0123456789ABCDEF';
-  let color = '#';
-  for (let i = 0; i<6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
+function changeColor(color) {
+  let body = document.body;
+  switch (color) {
+      case 'blue':
+          body.style.backgroundColor = '#061935';  // Blue color
+          break;
+      case 'black':
+          body.style.backgroundColor = '#0fd281d0';  // Black color
+          break;
+      case 'white':
+          body.style.backgroundColor = '#ffffff';  // White color
+          break;
+      case 'random':
+          // Generate a random color
+          const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+          body.style.backgroundColor = randomColor;
+          break;
   }
-  return color;
 }
 
 fontSizes.forEach(fontSize => {
